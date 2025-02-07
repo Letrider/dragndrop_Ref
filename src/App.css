@@ -1,0 +1,44 @@
+.game {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.board {
+  width: calc(10 * 30px + 9 * 20px);
+  /* 10 клеток * 30px + 9 отступов * 20px */
+  height: calc(10 * 30px + 9 * 20px);
+  /* Аналогично */
+  background: #222;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(10, 30px);
+  grid-template-rows: repeat(10, 30px);
+  gap: 20px;
+  /* Отступы между клетками */
+  padding: 2px;
+}
+
+.cell {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.ship {
+  position: absolute;
+  z-index: 1;
+  box-sizing: border-box;
+  border: 1px solid #333;
+  /* Граница между клетками */
+}
+
+.ship.dragging {
+  z-index: 2;
+
+  border-color: #666;
+}
+
+.ship-part {
+  background: #111;
+  border: 1px solid #333;
+}
